@@ -8,9 +8,6 @@ const connection = mysql.createConnection({
     database    : 'nodejs',
 
 });
-connection.connect( (error) => {
-    if(error) throw error.code;
-    console.log('true')
-});
+// connection.connect( () => {});
 
 module.exports = connection;
