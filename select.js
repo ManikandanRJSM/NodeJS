@@ -1,8 +1,9 @@
 const connection = require('./connection');
 
-if(connection != 'true'){
-    console.error(connection);
-}
+connection.connect( (error) => {
+    if(error) throw error;return false;
+    
+});
 function getAllUser(){
     var sql = 'SELECT *FROM users'
     connection.query(sql, (error, results, feilds) => {
@@ -41,6 +42,6 @@ function getUser(id){
         console.log(userdata);
     })
 }
-getAllUser();
+// getAllUser();
 
 getUser(1);
